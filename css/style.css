@@ -1,0 +1,79 @@
+.cabecalho {
+    background: black;
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.tabela{
+    margin-bottom: 200px;
+}
+
+.principal{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.finalizar:hover{
+    cursor: pointer;
+}
+
+.link{
+    color:white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: white;
+    text-decoration-line: none;
+
+}
+
+.contato{
+    margin-bottom: 150px;
+}
+
+.rodape{
+    margin-top: 200px;;
+}
+
+.usuario-desktop{
+    display: none;
+}
+
+.usuario-mobile {
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+}
+
+.usuario-mobile> p{
+    border-bottom: 1px solid green;
+    padding: 10px;
+    font-size: 2em;
+}
+
+.usuario-mobile> a {
+    margin: 10px;
+}
+
+@media screen and (min-width: 576px){
+    .usuario-mobile {
+        border: 1px solid lightslategray;
+        border-radius: 5px;
+        display: none;
+    }
+    
+    .usuario-mobile> p{
+        border-bottom: 1px solid green;
+        padding: 10px;
+        font-size: 2em;
+        display: none;
+    }
+    
+    .usuario-mobile> a {
+        margin: 10px;
+        display: none;
+    }
+
+    .usuario-desktop {
+        display: initial;
+    }
+}
