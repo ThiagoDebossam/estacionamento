@@ -1,0 +1,4 @@
+user-agent:*
+Disallow: /src
+Disallow: /conexoes_php
+Disallow: /private

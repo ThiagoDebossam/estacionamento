@@ -1,0 +1,133 @@
+/* css modal */
+.botoes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dinheiro{
+    font-size:1.5em;
+}
+
+.index-modal{
+    background: white;
+    border: 1px solid blue;
+    border-radius: 10px;
+    max-width:60%;
+    min-width: 300px;
+    padding: 40px;
+}
+
+.index-modal>label{
+    font-size:1.5em;
+}
+
+.index-modal>p{
+    font-size:1.5em;
+    margin-bottom:0;
+}
+
+.modal-container{
+    align-items: center;
+    background: rgba(0,0,0, 0.5);
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 2000;
+}
+
+.modal-container.mostrar-modal, .formulario-edicao-container.mostar-modal{
+    display: flex;
+}
+
+.titulo_modal{
+    padding-bottom: 30px;
+}
+
+#tempo, #valor_hora{
+    border-radius: 5px;
+    margin:20px;
+}
+
+/* fecha css modal */
+
+/* css modal formulario */
+
+.container-edicao{
+    background: white;
+    border: 1px solid blue;
+    border-radius: 10px;
+    margin-top:70px;
+    max-width:60%;
+    min-width: 300px;
+    padding: 40px;
+}
+
+.formulario-edicao-container{
+    align-items: center;
+    background: rgba(0,0,0, 0.5);
+    display:none;
+    height: 100vh;
+    justify-content: center;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 2000;
+}
+
+.formulario-edicao-container.mostrar-modal{
+    display:flex;
+}
+
+/* fecha css modal formulario */
+
+/* css modal exclusao */
+.container-exclusao{
+    background: white;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin-top:70px;
+    max-width:60%;
+    min-width: 300px;
+    padding: 40px;
+}   
+
+.modal-exclusao-container{
+    align-items: center;
+    background: rgba(0,0,0, 0.5);
+    display:none;
+    height: 100vh;
+    justify-content: center;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 2000;
+}
+
+.modal-exclusao-container.mostrar-modal{
+    display:flex;
+}
+
+/* fecha css modal exclusao */
+
+/* modal mobile */
+
+@media screen and (max-width: 767px){
+    .botoes{
+        display: inherit;
+    }
+
+    .calcular{
+        display: none;
+    }
+
+    #cancelar{
+        display: block;
+        margin-top: 5px;
+    }
+}

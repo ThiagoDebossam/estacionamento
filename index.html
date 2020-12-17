@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estacionamento"> 
+    <title>Estacionamento</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" href="css/images/carro-ecologico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body class="fundo">
+    <header class="cabecalho p-5">
+        <div class="text-center">
+            <h1 class="d-inline text-white" title="Estacionamento">Estacionamento</h1>
+        </div>
+    </header>
+    <main>    
+        <!-- inicio da barra de navegacao -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>       
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                <a class="nav-link active" id="linkPrincipal" href="#principal">Página Inicial <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item" id="linkAdm">
+                    <a class="nav-link" href="#administracao-de-usuarios" >Administração de Usuários</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-danger sair font-weight-bold text-uppercase" id="sair">Sair</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        <!-- final da barra de navegacao -->
+        <!-- inicio do conteudo principal do site  -->
+        <section class="prinpal" id="principal">
+            <div class="container">
+                <section>
+                    <!-- inicio do formulario para adicionar veiculo -->
+                    <form id="formulario">
+                        <h2 id="adicionarVeiculo" class=" mt-5" title="Adicionar veículo">Adicionar veículo</h2>
+                        <div class="form-group">
+                            <input class="form-control" id="modelo" type="text" name="modelo_carro" placeholder="Digite o modelo do carro...">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="placa"  type="text" name="placa_carro" minlength=7 maxlength=7 placeholder="Digite a placa do carro...">
+                        </div>
+                        <div class="form-group form-check">
+                            <!-- checkbox para mundanca de mascara da placa  -->
+                            <input type="checkbox" checked class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label"  for="exampleCheck1">Placa MERCOSUL</label>
+                        </div>
+                        <!-- mostra mensagem caso os campos não sejam preenchidos -->
+                        <p class="text-danger font-weight-bold" id="mensagem"></p>
+                        <input title="Botão para adicionar veículo" id="btn-adicionar" class="mb-5 btn btn-success btn-lg btn-block" type="submit" name="adicionar" value="Adicionar">
+                    </form>
+                    <!-- final do formulario para adicionar veiculo -->
+                </section>
+                <!-- inicio do formulario de pesquisa -->
+                <div class="form-group mb-2">
+                    <h6>Digite a placa do veículo para pesquisar...</h6>
+                    <input class="form-control" type="search" name="pesquisa" id="buscar" placeholder="Digite a placa do veículo...">
+                </div>
+                <!-- final do formulario de pesquisa -->
+                <section class="tabela bg-white">
+                <!-- inicio da tabela de carros -->
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Placa</th>
+                            <th scope="col">Entrada</th>
+                            <th scope="col">Finalizar</th>
+                        </tr>
+                        </thead>
+                        <!-- listagem dos carros -->
+                        <tbody id="tabela">
+                        </tbody>
+                        <!-- fim da listagem dos carros -->
+                    </table>
+                <!-- final da tabela de carros -->
+                </section>  
+            </div>
+        </section>
+        <!-- final do conteudo principal do site  -->
+        <!-- inicio da administracao de usuarios -->
+        <section class='adm-usuarios' id="administracao-de-usuarios" style="display:none">
+            <div class="container">
+                <section>
+                <!-- inicio do formulario para adicionar um usuario -->
+                    <form id="formulario-usuarios">
+                        <h2 class=" mt-5" title="Adicionar um novo usuário">Adicionar um novo usuário</h2>
+                        <div class="form-group">
+                            <input  class="form-control" type="text" id="usuario" name="usuario" placeholder="Digite o nome de usuário...">
+                        </div>
+                        <div class="form-group">
+                            <input  class="form-control"type="email" id="email" name="email" placeholder="nome@exemplo.com...">
+                        </div>
+                        <div class="form-group">
+                        <input class="form-control"type="password" id="senha" name="senha" minlength="5" maxlength="20" placeholder="Digite a senha...">
+                    </div>
+                    <!-- paragrafo para exibicao de erros caso o formulario nao seja preenchido corretamente -->
+                    <p class="text-danger font-weight-bold" id="mensagem-usuarios"></p>
+                        <input title="Botão para adicionar um novo usuário" class="mb-5 btn btn-success btn-lg btn-block" type="submit" name="adicionar" value="Adicionar">
+                    </form>
+                <!-- fim do formulario para adicionar um usuario -->
+                </section>
+                <!-- input para pesquisa na tabela de usuarios -->
+                <div class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" id="pesquisar" name="pesquisa" type="search" placeholder="Nome do usuário" aria-label="Pesquisar">
+                </div>
+                <!-- inicio da tabela de usuarios  -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Usuário</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-usuarios">
+                    </tbody>
+                </table>
+                <!-- fim da tabela de usuarios  -->
+            </div>
+        </section>
+        <!-- fim da administracao de usuarios -->
+    </main>
+    <footer class="text-center mt-5 p-5 bg-dark text-white">
+        <p>Este site foi desenvolvido por Thiago Debossam Nogueira.</p>
+    </footer>
+    <!-- modal de exibicao de detalhes do carro antes de finaliza-lo  -->
+    <div id="modal-index" class="modal-container">
+    </div>
+    <!-- modal de exibicao do formulario de edicao de um usuario  -->
+    <div id="formulario-edicao" class="formulario-edicao-container">
+    </div>
+    <!-- modal de exibicao de detalhes do usuario antes de exclui-lo  -->
+    <div id="modal-exclusao" class="modal-exclusao-container">
+    </div>
+    <script src="./src/jquery.js"></script>
+    <script src="./src/controllers/controlleSessao.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./src/models/Carro.js"></script>
+    <script src="./src/models/Usuario.js"></script>
+    <script src="./src/controllers/IndexController.js"></script>
+    <script src="./src/controllers/AdmController.js"></script>
+    <script src="./src/controllers/login.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="http://localhost/projetosthiago/estacionamento_3.0/private/conexoes_php/listagem_veiculos.php?callback=retornarCarros"></script>
+    <script src="http://localhost/projetosthiago/estacionamento_3.0/private/conexoes_php/listagem_usuarios.php?callback=retornarUsuarios"></script>
+</body>
+</html>
