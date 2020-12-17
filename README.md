@@ -1,7 +1,7 @@
 # estacionamento  
 Projeto estacionamento.
 Para acessar acessar a página:
-user
+Master
 12345
 
 Projeto desenvolvido a fim de controlar o fluxo de movimentação dentro de um estacionamento. 
