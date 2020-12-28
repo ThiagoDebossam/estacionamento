@@ -13,7 +13,7 @@ function verificaLogin(login){
     }).then(data=>{
         if(data == "Sucesso"){
             sessionStorage.setItem("SESSAO", "user");
-            window.location.href = "http://localhost/projetosthiago/estacionamento_3.0/";
+            window.location.href = "http://localhost/estacionamento/";
         }else{
             $("#mensagem").html(data);
         }
