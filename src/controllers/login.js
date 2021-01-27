@@ -13,7 +13,7 @@ function verificaLogin(login){
     }).then(data=>{
         if(data == "Sucesso"){
             sessionStorage.setItem("SESSAO", "user");
-            window.location.href = "http://localhost/estacionamento/";
+            window.location.href = "../";
         }else{
             $("#mensagem").html(data);
         }
